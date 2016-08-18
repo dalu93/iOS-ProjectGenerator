@@ -1,13 +1,20 @@
 #! /bin/bash
 
 echo "What's the name of your project? (SPACES ARE FORBIDDEN)"
-read name
+read projectName
 
-if [[ -n "$name" ]]; then
-  mv MY_PROJECT_NAME ${name}
+if [[ -n "$projectName" ]]; then
 
-  perl -pi -e "s/MY_PROJECT_NAME/${name}/g" Cakefile
-  xcake make
-  rm -f Cakefile
-  rm -f init.sh
+  echo "What's the organization name?"
+  read organization
+
+  if [[ -n "$organization" ]]; then
+    mv MY_PROJECT_NAME ${projectName}
+
+    perl -pi -e "s/MY_PROJECT_NAME/${projectName}/g" Cakefile
+    perl -pi -e "s/MY_PROJECT_ORGANIZATION/${organization}/g" Cakefile
+    xcake make
+    rm -f Cakefile
+    rm -f init.sh
+  fi
 fi
