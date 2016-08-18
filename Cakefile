@@ -1,4 +1,4 @@
-projectName = "LocalStuff"
+projectName = "MY_PROJECT_NAME"
 projectOrganization = "MY_PROJECT_ORGANIZATION"
 
 project.name = projectName
